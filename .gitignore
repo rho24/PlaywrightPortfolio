@@ -35,6 +35,7 @@ UpgradeLog.XML
 UpgradeLog.htm
 Backup/
 [Pp]ackages/
+App_Data/
 
 #Tooling
 _ReSharper*/
