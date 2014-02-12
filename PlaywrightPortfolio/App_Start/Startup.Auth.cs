@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using System.Web.Configuration;
+using Microsoft.AspNet.Identity;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
@@ -23,8 +24,8 @@ namespace PlaywrightPortfolio
 
             // Uncomment the following lines to enable logging in with third party login providers
             app.UseMicrosoftAccountAuthentication(
-                clientId: (string)context.Application["MicrosoftAuthClientId"] ?? "1",
-                clientSecret: (string)context.Application["MicrosoftAuthClientSecret"] ?? "1");
+                clientId: WebConfigurationManager.AppSettings["MicrosoftAuthClientId"] ?? "1",
+                clientSecret: WebConfigurationManager.AppSettings["MicrosoftAuthClientSecret"] ?? "1");
 
             //app.UseTwitterAuthentication(
             //   consumerKey: "",
