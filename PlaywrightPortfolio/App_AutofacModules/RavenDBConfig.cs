@@ -14,7 +14,7 @@ namespace PlaywrightPortfolio.App_AutofacModules
         protected override void Load(ContainerBuilder builder) {
             builder.Register(
                 c => {
-                    IDocumentStore store = new DocumentStore { ConnectionStringName = "RavenDb", DefaultDatabase = "playwright" }.Initialize();
+                    IDocumentStore store = new DocumentStore { ConnectionStringName = "RavenDb" }.Initialize();
 
                     return store;
                 }).As<IDocumentStore>().SingleInstance();
