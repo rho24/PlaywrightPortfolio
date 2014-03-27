@@ -1,6 +1,3 @@
-/*
-// Uncomment this class to provide custom runtime policy for Glimpse
-
 using Glimpse.AspNet.Extensions;
 using Glimpse.Core.Extensibility;
 
@@ -18,6 +15,12 @@ namespace PlaywrightPortfolio
             //     return RuntimePolicy.Off;
 			// }
 
+            var httpContext = policyContext.GetHttpContext();
+            if (!httpContext.User.IsInRole("Administrator"))
+            {
+                return RuntimePolicy.Off;
+            }
+
             return RuntimePolicy.On;
         }
 
@@ -29,4 +32,3 @@ namespace PlaywrightPortfolio
         }
     }
 }
-*/
