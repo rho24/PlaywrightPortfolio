@@ -26,5 +26,9 @@ namespace PlaywrightPortfolio.Controllers
 
             return View();
         }
+
+        public ActionResult ThrowAnError() {
+            throw new NotImplementedException("This isn't implemented");
+        }
     }
 }
